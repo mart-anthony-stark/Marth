@@ -1,0 +1,17 @@
+{
+  "name": "marth",
+  "version": "1.0.0",
+  "description": "A statistic library that offers different mathematical functions that can be used in large dataset computing",
+  "main": "main.ts",
+  "scripts": {
+    "dev:client": "tsc src/main --outFile build/client/bundle.js --watch --sourceMap",
+    "dev:server": "nodemon src/test",
+    "build": "tsc -p main.ts"
+  },
+  "author": "Mart Anthony Salazar",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  }
+}
