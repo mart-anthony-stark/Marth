@@ -11,20 +11,8 @@ const Marth = (dataset: Array<number>) => {
   const size = (): number => instance.dataset.length;
 
   // Central tendency
-  /**
-   * Computes the mean of the dataset
-   * @returns {number} - Mean
-   */
   const mean = (): number => _mean(instance);
-  /**
-   * Computes the median of the dataset
-   * @returns number - Median
-   */
   const median = (): number => _median(instance);
-  /**
-   * Computes the mode of the dataset
-   * @returns number - Mode
-   */
   const mode = (): number => _mode(instance);
   const range = (): number =>
     instance.sort()[instance.dataset.length - 1] - instance.sort()[0];
@@ -78,7 +66,17 @@ const Marth = (dataset: Array<number>) => {
       return quicksort(instance.dataset);
     },
     mean,
+
+    /**
+     * Computes the median of the dataset
+     * @returns number - Median
+     */
     median,
+
+    /**
+     * Computes the mode of the dataset
+     * @returns number - Mode
+     */
     mode,
     range,
     sVar,
