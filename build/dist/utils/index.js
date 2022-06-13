@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.quicksort = void 0;
+exports.summation = exports.quicksort = void 0;
 const quicksort = (array) => {
     if (array.length <= 1) {
         return array;
@@ -14,3 +14,5 @@ const quicksort = (array) => {
     return (0, exports.quicksort)(left).concat(pivot, (0, exports.quicksort)(right));
 };
 exports.quicksort = quicksort;
+const summation = (arr) => arr.reduce((prev, current) => prev + current, 0);
+exports.summation = summation;

@@ -1,3 +1,3 @@
-const application = require("./build/dist");
+const lib = require("./build/dist/main.js");
 
-module.exports = application;
+module.exports = lib;

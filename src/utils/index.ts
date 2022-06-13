@@ -14,3 +14,6 @@ export const quicksort = (array: any): any => {
 
   return quicksort(left).concat(pivot, quicksort(right));
 };
+
+export const summation = (arr: Array<number>) =>
+  arr.reduce((prev, current) => prev + current, 0);
