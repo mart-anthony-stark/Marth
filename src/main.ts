@@ -1,7 +1,12 @@
 const Marth = (dataset: Array<number>) => {
   const size = (): number => instance.dataset.length;
 
-  // MEASURES OF CENTRAL TENDENCY
+  // Central tendency
+
+  /**
+   * Computes the mean of the dataset
+   * @returns number - Mean
+   */
   const mean = (): number => {
     return instance.summation() / instance.size();
   };
