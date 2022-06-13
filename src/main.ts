@@ -1,4 +1,4 @@
-const Freaq = (dataset: Array<number>) => {
+const Marth = (dataset: Array<number>) => {
   const size = (): number => instance.dataset.length;
 
   // MEASURES OF CENTRAL TENDENCY
@@ -118,4 +118,4 @@ function quicksort(array: any): any {
 
   return quicksort(left).concat(pivot, quicksort(right));
 }
-export default Freaq;
+export default Marth;
