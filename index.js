@@ -1,3 +1,3 @@
-import Marth from './build/dist/main.js'
+const application = require("./build/dist");
 
-export default Marth
+module.exports = application;
