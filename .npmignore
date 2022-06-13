@@ -1,1 +1,3 @@
 build/client
+src
+tsconfig.json
