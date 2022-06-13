@@ -4,7 +4,7 @@ import { _mean, _median, _mode } from "./utils/central_tendency";
 /**
  * @class
  * @description Marth.js
- * @param dataset(number)
+ * @param       dataset {Array<number>}
  * @returns
  */
 const Marth = (dataset: Array<number>) => {
@@ -13,7 +13,7 @@ const Marth = (dataset: Array<number>) => {
   // Central tendency
   /**
    * Computes the mean of the dataset
-   * @returns number - Mean
+   * @returns {number} - Mean
    */
   const mean = (): number => _mean(instance);
   /**

@@ -9,6 +9,10 @@ const _mean = (instance) => {
     return instance.summation() / instance.size();
 };
 exports._mean = _mean;
+/**
+ * Computes the median of the dataset
+ * @returns number - Median
+ */
 const _median = (instance) => {
     const nums = instance.sort();
     let half = Math.floor(instance.size() / 2);
@@ -17,6 +21,10 @@ const _median = (instance) => {
     return (nums[half - 1] + nums[half]) / 2.0;
 };
 exports._median = _median;
+/**
+ * Computes the mode of the dataset
+ * @returns number - Mode
+ */
 const _mode = (instance) => {
     const arr = instance.dataset;
     const mode = {};

@@ -17,12 +17,12 @@ const Marth = (dataset) => {
     const mean = () => (0, central_tendency_1._mean)(instance);
     /**
      * Computes the median of the dataset
-     * @returns number - Mean
+     * @returns number - Median
      */
     const median = () => (0, central_tendency_1._median)(instance);
     /**
      * Computes the mode of the dataset
-     * @returns number - Mean
+     * @returns number - Mode
      */
     const mode = () => (0, central_tendency_1._mode)(instance);
     const range = () => instance.sort()[instance.dataset.length - 1] - instance.sort()[0];
