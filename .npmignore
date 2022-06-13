@@ -1,3 +1,4 @@
 build/client
 src
 tsconfig.json
+test.js
