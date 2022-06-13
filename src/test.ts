@@ -1,5 +1,6 @@
-import Marth from "./index";
+import Marth from "./main";
 
-const f = Marth([1, 2, 3]);
-console.log(f.dataset);
-f.mean();
+const mt = new Marth();
+mt.setDataset([1,2,3])
+console.log(mt.getDataset());
+console.log(mt.mean());
