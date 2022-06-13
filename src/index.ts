@@ -18,12 +18,12 @@ const Marth = (dataset: Array<number>) => {
   const mean = (): number => _mean(instance);
   /**
    * Computes the median of the dataset
-   * @returns number - Mean
+   * @returns number - Median
    */
   const median = (): number => _median(instance);
   /**
    * Computes the mode of the dataset
-   * @returns number - Mean
+   * @returns number - Mode
    */
   const mode = (): number => _mode(instance);
   const range = (): number =>

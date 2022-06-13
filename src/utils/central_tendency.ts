@@ -6,6 +6,10 @@ export const _mean = (instance: any): number => {
   return instance.summation() / instance.size();
 };
 
+/**
+ * Computes the median of the dataset
+ * @returns number - Median
+ */
 export const _median = (instance: any): number => {
   const nums = instance.sort();
   let half = Math.floor(instance.size() / 2);
@@ -13,6 +17,11 @@ export const _median = (instance: any): number => {
 
   return (nums[half - 1] + nums[half]) / 2.0;
 };
+
+/**
+ * Computes the mode of the dataset
+ * @returns number - Mode
+ */
 export const _mode = (instance: any): number => {
   const arr = instance.dataset;
   const mode: any = {};
