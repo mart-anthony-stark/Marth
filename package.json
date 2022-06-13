@@ -6,7 +6,7 @@
   "scripts": {
     "dev:client": "tsc src/main --outFile build/client/bundle.js --watch --sourceMap",
     "dev:server": "nodemon src/test",
-    "build": "tsc -p main.ts"
+    "build": "tsc -p ."
   },
   "author": "Mart Anthony Salazar",
   "license": "ISC",
