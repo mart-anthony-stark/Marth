@@ -4,26 +4,14 @@ const central_tendency_1 = require("./utils/central_tendency");
 /**
  * @class
  * @description Marth.js
- * @param dataset(number)
+ * @param       dataset {Array<number>}
  * @returns
  */
 const Marth = (dataset) => {
     const size = () => instance.dataset.length;
     // Central tendency
-    /**
-     * Computes the mean of the dataset
-     * @returns number - Mean
-     */
     const mean = () => (0, central_tendency_1._mean)(instance);
-    /**
-     * Computes the median of the dataset
-     * @returns number - Median
-     */
     const median = () => (0, central_tendency_1._median)(instance);
-    /**
-     * Computes the mode of the dataset
-     * @returns number - Mode
-     */
     const mode = () => (0, central_tendency_1._mode)(instance);
     const range = () => instance.sort()[instance.dataset.length - 1] - instance.sort()[0];
     // Variance of SAMPLE population
@@ -70,7 +58,15 @@ const Marth = (dataset) => {
             return (0, utils_1.quicksort)(instance.dataset);
         },
         mean,
+        /**
+         * Computes the median of the dataset
+         * @returns number - Median
+         */
         median,
+        /**
+         * Computes the mode of the dataset
+         * @returns number - Mode
+         */
         mode,
         range,
         sVar,
