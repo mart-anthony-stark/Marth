@@ -1,6 +1,6 @@
 /**
  * @class 
- * @description Marth.js - {description}
+ * @description Marth.js
  * @param dataset(number)
  * @returns
  */
