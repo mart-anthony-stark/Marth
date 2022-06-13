@@ -2,10 +2,10 @@
   "name": "marth",
   "version": "1.0.0",
   "description": "A statistic library that offers different mathematical functions that can be used in large dataset computing",
-  "main": "main.ts",
+  "main": "index.js",
   "scripts": {
-    "dev:client": "tsc src/main --outFile build/client/bundle.js --watch --sourceMap",
-    "dev:server": "nodemon src/test",
+    "dev:client": "tsc src/index --outFile build/client/bundle.js --watch --sourceMap",
+    "dev:server": "nodemon src/test.ts",
     "build": "tsc -p ."
   },
   "author": "Mart Anthony Salazar",
