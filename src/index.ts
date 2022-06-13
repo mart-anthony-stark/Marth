@@ -1,5 +1,8 @@
+import { quicksort } from "./utils";
+import { _mean, _median, _mode } from "./utils/central_tendency";
+
 /**
- * @class 
+ * @class
  * @description Marth.js
  * @param dataset(number)
  * @returns
@@ -8,44 +11,21 @@ const Marth = (dataset: Array<number>) => {
   const size = (): number => instance.dataset.length;
 
   // Central tendency
-
   /**
    * Computes the mean of the dataset
    * @returns number - Mean
    */
-  const mean = (): number => {
-    return instance.summation() / instance.size();
-  };
-  const median = (): number => {
-    const nums = instance.sort();
-    let half = Math.floor(instance.size() / 2);
-    if (instance.size() % 2) return nums[half];
-
-    return (nums[half - 1] + nums[half]) / 2.0;
-  };
-  const mode = (): number => {
-    const arr = instance.dataset;
-    const mode: any = {};
-    let max = 0,
-      count = 0;
-
-    for (let i = 0; i < arr.length; i++) {
-      const item = Math.floor(arr[i]);
-
-      if (mode[item]) {
-        mode[item]++;
-      } else {
-        mode[item] = 1;
-      }
-
-      if (count < mode[item]) {
-        max = item;
-        count = mode[item];
-      }
-    }
-
-    return max;
-  };
+  const mean = (): number => _mean(instance);
+  /**
+   * Computes the median of the dataset
+   * @returns number - Mean
+   */
+  const median = (): number => _median(instance);
+  /**
+   * Computes the mode of the dataset
+   * @returns number - Mean
+   */
+  const mode = (): number => _mode(instance);
   const range = (): number =>
     instance.sort()[instance.dataset.length - 1] - instance.sort()[0];
 
@@ -113,20 +93,4 @@ const Marth = (dataset: Array<number>) => {
   return instance;
 };
 
-function quicksort(array: any): any {
-  if (array.length <= 1) {
-    return array;
-  }
-
-  let pivot = array[0];
-
-  let left = [];
-  let right = [];
-
-  for (let i = 1; i < array.length; i++) {
-    array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
-  }
-
-  return quicksort(left).concat(pivot, quicksort(right));
-}
 export = Marth;

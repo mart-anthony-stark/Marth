@@ -1,7 +1,10 @@
 "use strict";
+const utils_1 = require("./utils");
+const central_tendency_1 = require("./utils/central_tendency");
 /**
- * @description Marth.js - {description}
- * @param dataset
+ * @class
+ * @description Marth.js
+ * @param dataset(number)
  * @returns
  */
 const Marth = (dataset) => {
@@ -11,35 +14,17 @@ const Marth = (dataset) => {
      * Computes the mean of the dataset
      * @returns number - Mean
      */
-    const mean = () => {
-        return instance.summation() / instance.size();
-    };
-    const median = () => {
-        const nums = instance.sort();
-        let half = Math.floor(instance.size() / 2);
-        if (instance.size() % 2)
-            return nums[half];
-        return (nums[half - 1] + nums[half]) / 2.0;
-    };
-    const mode = () => {
-        const arr = instance.dataset;
-        const mode = {};
-        let max = 0, count = 0;
-        for (let i = 0; i < arr.length; i++) {
-            const item = Math.floor(arr[i]);
-            if (mode[item]) {
-                mode[item]++;
-            }
-            else {
-                mode[item] = 1;
-            }
-            if (count < mode[item]) {
-                max = item;
-                count = mode[item];
-            }
-        }
-        return max;
-    };
+    const mean = () => (0, central_tendency_1._mean)(instance);
+    /**
+     * Computes the median of the dataset
+     * @returns number - Mean
+     */
+    const median = () => (0, central_tendency_1._median)(instance);
+    /**
+     * Computes the mode of the dataset
+     * @returns number - Mean
+     */
+    const mode = () => (0, central_tendency_1._mode)(instance);
     const range = () => instance.sort()[instance.dataset.length - 1] - instance.sort()[0];
     // Variance of SAMPLE population
     const sVar = () => {
@@ -82,7 +67,7 @@ const Marth = (dataset) => {
             return instance.dataset.reduce((prev, current) => prev + current, 0);
         },
         sort: () => {
-            return quicksort(instance.dataset);
+            return (0, utils_1.quicksort)(instance.dataset);
         },
         mean,
         median,
@@ -98,16 +83,4 @@ const Marth = (dataset) => {
     };
     return instance;
 };
-function quicksort(array) {
-    if (array.length <= 1) {
-        return array;
-    }
-    let pivot = array[0];
-    let left = [];
-    let right = [];
-    for (let i = 1; i < array.length; i++) {
-        array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
-    }
-    return quicksort(left).concat(pivot, quicksort(right));
-}
 module.exports = Marth;
