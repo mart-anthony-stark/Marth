@@ -68,9 +68,20 @@ class Marth {
     return max;
   }
 
+  /**
+   * Sorts the dataset (uses quicksort algorithm)
+   * @param data dataset
+   * @returns sorted array
+   */
   sort(data?: any) {
     const nums = data ? data : this.dataset;
     return quicksort(nums);
+  }
+
+  range(data?: any): number {
+    const nums = data ? data : this.dataset;
+    const sorted = this.sort(nums);
+    return sorted[nums.length - 1] - sorted[0];
   }
 
   /**
