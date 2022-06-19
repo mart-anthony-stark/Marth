@@ -78,10 +78,39 @@ class Marth {
     return quicksort(nums);
   }
 
+  /**
+   *
+   * @param data dataset
+   * @returns {number} range of the dataset
+   */
   range(data?: any): number {
     const nums = data ? data : this.dataset;
     const sorted = this.sort(nums);
     return sorted[nums.length - 1] - sorted[0];
+  }
+
+  /**
+   * Computes the variance of the sample population
+   * @param data
+   * @returns {number} variance
+   */
+  sVar(data?: any): number {
+    const nums = data ? data : this.dataset;
+    const m = this.mean(nums);
+    const sum = nums.reduce((curr: any, n: any) => {
+      return (curr += Math.pow(n - m, 2));
+    }, 0);
+    return sum / (nums.length - 1);
+  }
+
+  /**
+   * Computes the standard deviation of the sample population
+   * @param data
+   * @returns {number} standard deviation
+   */
+  sDev(data?: any): number {
+    const nums = data ? data : this.dataset;
+    return Math.sqrt(this.sVar(nums));
   }
 
   /**
