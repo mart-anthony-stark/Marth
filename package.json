@@ -1,6 +1,6 @@
 {
   "name": "marth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A statistic library that offers different mathematical functions that can be used in large dataset computing",
   "main": "index.js",
   "scripts": {
